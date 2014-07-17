@@ -24,7 +24,7 @@ class Controller_Base extends Controller_Template {
                 'media/css/style.css', 
                 );
             $this->template->scripts = array(
-                'media/js/bootstrap.min.js',
+               // 'media/js/bootstrap.min.js',
             );
             
             //подключаем блоки
