@@ -1,4 +1,3 @@
-phjp
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,10 +5,10 @@ phjp
     <meta content="text/html; charset=utf8" http-equiv="content-type">
     
     <?foreach ($styles as $file_style):?>
-        <?=html::style($file_style)?>
+        <?=HTML::style($file_style)?>
     <?endforeach?>
     <?foreach ($scripts as $file_script):?>
-        <?=html::script($file_script)?>
+        <?=HTML::script($file_script)?>
     <?endforeach?>
 </head>
 

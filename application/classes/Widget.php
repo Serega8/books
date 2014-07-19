@@ -33,6 +33,7 @@ class Widget {
      */
     public static function load($widget_name, array $params = NULL, $route_name = NULL)
     {
+        
         $widget = new Widget($widget_name, $params, $route_name);
         return $widget->render();
     }
@@ -61,7 +62,7 @@ class Widget {
 
         // Загружаем файл конфигураций
          $widget_config = Kohana::$config->load("$this->_config_filename.$this->_widget_name.$controller");
-
+         //var_dump($widget_config);
          // Запрещаем вывод виджета в экшенах, указанных в конфигах
          if ($widget_config != NULL)
          {

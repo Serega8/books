@@ -4,12 +4,13 @@ class Controller_Admin_Products extends Controller_Admin {
            
 	public function action_index()
 	{
-            $content = View::factory('admin/products/v_products_admin');
+            $submenu = Widget::load('Menuproducts');
+                $content = View::factory('admin/products/v_products_admin', array(
+                    'submenu' => $submenu,
+                ));
             
-            $this->template->page_title = 'Продукты';
+            $this->template->page_title = 'Товары';
             $this->template->block_center = array($content);
-            $this->template->block_left = NULL;
-            $this->template->block_right = NULL;
 	}
         
         
