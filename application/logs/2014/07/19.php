@@ -723,3 +723,9 @@
 #12 /home/serega/Документы/kohana/project/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
 #13 /home/serega/Документы/kohana/project/index.php(118): Kohana_Request->execute()
 #14 {main} in /home/serega/Документы/kohana/project/application/views/index/catalog/v_catalog_index.php:10
+2014-07-19 17:32:57 --- EMERGENCY: ErrorException [ 1 ]: Class 'html' not found ~ APPPATH/views/admin/v_base.php [ 9 ] in file:line
+2014-07-19 17:32:57 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-07-19 17:39:35 --- EMERGENCY: ErrorException [ 1 ]: Class 'html' not found ~ APPPATH/views/admin/v_base.php [ 9 ] in file:line
+2014-07-19 17:39:35 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
