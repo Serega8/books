@@ -5,7 +5,6 @@ class Controller_Base extends Controller_Template {
         public function before() {
             parent::before();
             $settings = Kohana::$config->load('settings');
-            echo 'controller Base';
 //            print_r($settings);
 //            echo $controller = $this->request->controller();
 //            echo $action = $this->request->action();
