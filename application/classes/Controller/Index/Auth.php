@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_Index_Cart extends Controller_Index {
+class Controller_Index_Auth extends Controller_Index {
     
         
 	public function action_index()
