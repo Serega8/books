@@ -6,6 +6,7 @@ class Controller_Widgets_Menu extends Controller_Widgets {
         
 	public function action_index()
 	{
+             // Получаем список категорий
             $categories = Model::factory('Catalog')->categories();
             $this->template->categories = $categories;
 	}

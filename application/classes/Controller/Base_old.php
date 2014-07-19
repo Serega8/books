@@ -2,18 +2,20 @@
 
 class Controller_Base extends Controller_Template {
     
+        public $template = 'v_base'; //базовый шаблон
+        protected $widgets_foder = 'Widgets'; //папка для контроллеров виджетов
+
         public function before() {
             parent::before();
             $settings = Kohana::$config->load('settings');
-            echo 'controller Base';
-//            print_r($settings);
-//            echo $controller = $this->request->controller();
-//            echo $action = $this->request->action();
-//            echo $directory = $this->request->directory();
             
             //вывод в шаблон
             $this->template->site_name = $settings->site_name;
             $this->template->site_description = $settings->site_description;
+//            $this->template->top_menu = Request::factory('Widgets/Topmenu')->execute();
+            $this->template->top_menu = $this->widget_load('Topmenu');
+            $this->template->cart = $this->widget_load('Cart');
+//            $this->template->cart = Request::factory('Widgets/Cart')->execute();
             $this->template->page_title = NULL;
             
             //подключение стилей и скриптов
@@ -22,7 +24,7 @@ class Controller_Base extends Controller_Template {
                 'media/css/style.css', 
                 );
             $this->template->scripts = array(
-                'media/js/bootstrap.min.js',
+                //'media/js/bootstrap.min.js',
             );
             
             //подключаем блоки

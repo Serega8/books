@@ -3,7 +3,7 @@
  * Класс для получения виджетов
  */
 
-class Myclass {
+class Widget {
 
     protected $_controllers_folder  = 'Widgets';    // Название папки с контроллерами виджетов
     protected $_config_filename     = 'widgets';    // Название файла конфигураций виджетов
@@ -20,7 +20,7 @@ class Myclass {
      */
     public static function factory($widget_name, array $params = NULL, $route_name = NULL)
     {
-        return new Myclass($widget_name, $params, $route_name);
+        return new Widget($widget_name, $params, $route_name);
     }
 
 
@@ -33,7 +33,7 @@ class Myclass {
      */
     public static function load($widget_name, array $params = NULL, $route_name = NULL)
     {
-        $widget = new Myclass($widget_name, $params, $route_name);
+        $widget = new Widget($widget_name, $params, $route_name);
         return $widget->render();
     }
 

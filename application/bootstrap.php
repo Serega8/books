@@ -142,10 +142,20 @@ Kohana::modules(array(
 //		'action'     => 'index',
 //	));
 
-Route::set('widgets', 'Widgets(/<controller>(/<action>(/<id>)))')
+//Для увеличения быстродействия, можно роуты при первом запуске занести в кэш, 
+//чтобы они хранились на сервере и загружались уже от туда, при следующих загрузках
+//if(! Route::cache()) {
+
+Route::set('widgets', 'Widgets(/<controller>(/<param>))', array('param' => '.+'))
 	->defaults(array(
 		'directory' => 'Widgets',
 		'action'     => 'index',
+	));
+
+Route::set('search', 'Search')
+	->defaults(array(
+		'directory' => 'Index',
+		'controller'=> 'search',
 	));
 
 //Route::set('lessons', '(<directory>(/<controller>(/<action>(/<id>))))')
@@ -155,8 +165,44 @@ Route::set('widgets', 'Widgets(/<controller>(/<action>(/<id>)))')
 //		'action'     => 'index',
 //	));
 
-Route::set('default', '(<controller>(/<action>(/<id>)))')
+//Для статических страниц (например, file.html)
+Route::set('static', '<path>.html', 
+        array(
+            'path' => '[a-zA-Z0-9_/]+',
+        ))
+        ->defaults(array(
+            'controller' => 'static', 
+            'action' => 'index', 
+        ));
+
+//для конкретной папки (directory можно ограничить регулярным выражением)
+Route::set('admin', 'Admin(/<controller>(/<action>(/<id>)))')
 	->defaults(array(
-		'controller' => 'Index',
+		'controller' => 'Main',
+		'action'     => 'index',
+                'directory'  => 'Admin',
+	));
+
+
+
+
+//регулярное выражение для экшена
+Route::set('auth', '<action>', array('action' => '(login|logout|register)'))
+        ->defaults(array(
+            'directory'  => 'Index',
+            'controller' => 'Auth',
+            
+            //'action'     => 'login',
+        ));
+
+//можно задавать регулярное выражение для параметра
+//если убарать регулярное выражение, то id и id2 выведутся слитно
+Route::set('default', '(<controller>(/<action>(/<id>(/<id2>))))')
+	->defaults(array(
+                'directory'  => 'Index',
+		'controller' => 'Main',
 		'action'     => 'index',
 	));
+//если информация не взята из кэша, то заносим её туда
+//Route::cache(TRUE);
+//}
