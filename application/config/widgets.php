@@ -27,5 +27,8 @@ return array(
         'auth' => array('login', 'register'),
         'account' => array('all_actions'),
     ), 
+    'cart' => array(
+        'cart' => array('index'),
+    ),
 );
 

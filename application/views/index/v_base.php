@@ -12,14 +12,21 @@
     </head>
     <body>
         <center>
-            <table align="center" border="1" width="790" cellpadding="0">
-                <thead>
+            <table align="center" border="0" width="990" cellpadding="10" class="maintbl">
+                
+                 <thead>
                     <tr>
                         <th align="left" colspan="3">
-                            <div id="head">
+                             <div id="header">
+                                  <?=$cart?>
+                                 <img src="/media/img/logo.png" align="left">
+                                 <br/>
                                 <a href="/"><h1><?=$site_name?></h1></a>
                                 <h3><?=$site_description?></h3>
+
+                               <div class="top_menu"><?=$top_menu?></div>
                             </div>
+
                         </th>
                     </tr>
                 </thead>
@@ -63,6 +70,5 @@
                     </tr>
                 </tbody>
             </table>
-        
     </body>
 </html>

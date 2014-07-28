@@ -12,6 +12,7 @@ class Controller_Admin extends Controller_Base {
             $this->template->styles[] = 'media/css/style.css';
             $this->template->styles[] = 'media/css/style_admin.css';
             $this->template->menu_admin = $menu_admin;
+            $this->template->submenu = NULL;
         }
 
         

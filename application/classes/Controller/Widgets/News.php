@@ -6,8 +6,8 @@ class Controller_Widgets_News extends Controller_Widgets {
         
 	public function action_index()
 	{
-            $news = Model::factory('News')->all_news();
-            $this->template->news = $news;
+            $all_news = Model::factory('New')->get_news(3); ///limit = 3
+            $this->template->all_news = $all_news;
 	}
         
         

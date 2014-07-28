@@ -124,10 +124,10 @@ Kohana::modules(array(
 	// 'auth'       => MODPATH.'auth',       // Basic authentication
 	// 'cache'      => MODPATH.'cache',      // Caching with multiple backends
 	// 'codebench'  => MODPATH.'codebench',  // Benchmarking tool
-	// 'database'   => MODPATH.'database',   // Database access
+	 'database'   => MODPATH.'database',   // Database access
 	// 'image'      => MODPATH.'image',      // Image manipulation
 	// 'minion'     => MODPATH.'minion',     // CLI Tasks
-	// 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
+	 'orm'        => MODPATH.'orm',        // Object Relationship Mapping
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
 	// 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
 	));
@@ -146,10 +146,15 @@ Kohana::modules(array(
 //чтобы они хранились на сервере и загружались уже от туда, при следующих загрузках
 //if(! Route::cache()) {
 
+//Route::set('widgets', 'Widgets(/<controller>(/<param>))', array('param' => '.+'))
+//	->defaults(array(
+//		'directory' => 'Widgets',
+//		'action'     => 'index',
+//	));
 Route::set('widgets', 'Widgets(/<controller>(/<param>))', array('param' => '.+'))
 	->defaults(array(
-		'directory' => 'Widgets',
-		'action'     => 'index',
+            'directory'  => 'widgets',
+            'action'     => 'index',
 	));
 
 Route::set('search', 'Search')
@@ -166,17 +171,17 @@ Route::set('search', 'Search')
 //	));
 
 //Для статических страниц (например, file.html)
-Route::set('static', '<path>.html', 
-        array(
-            'path' => '[a-zA-Z0-9_/]+',
-        ))
-        ->defaults(array(
-            'controller' => 'static', 
-            'action' => 'index', 
-        ));
+//Route::set('static', '<path>.html', 
+//        array(
+//            'path' => '[a-zA-Z0-9_/]+',
+//        ))
+//        ->defaults(array(
+//            'controller' => 'static', 
+//            'action' => 'index', 
+//        ));
 
 //для конкретной папки (directory можно ограничить регулярным выражением)
-Route::set('admin', 'Admin(/<controller>(/<action>(/<id>)))')
+Route::set('admin', 'admin(/<controller>(/<action>(/<id>)))')
 	->defaults(array(
 		'controller' => 'Main',
 		'action'     => 'index',
@@ -195,6 +200,26 @@ Route::set('auth', '<action>', array('action' => '(login|logout|register)'))
             //'action'     => 'login',
         ));
 
+Route::set('catalog', 'catalog(/<action>(/<cat>(/<id>)))')
+        ->defaults(array(
+            'directory'  => 'Index',
+            'controller' => 'Catalog',
+            'action'     => 'index',
+        ));
+
+Route::set('contacts', 'page/contacts')
+        ->defaults(array(
+            'directory'  => 'Index',
+            'controller' => 'Page',
+            'action'     => 'contacts',
+        ));
+
+Route::set('page', 'page/<page_alias>')
+        ->defaults(array(
+            'directory'  => 'Index',
+            'controller' => 'Page',
+            'action'     => 'index',
+        ));
 //можно задавать регулярное выражение для параметра
 //если убарать регулярное выражение, то id и id2 выведутся слитно
 Route::set('default', '(<controller>(/<action>(/<id>(/<id2>))))')

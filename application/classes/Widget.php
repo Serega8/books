@@ -51,7 +51,7 @@ class Widget {
             $this->_route_name = $route_name;
         }
 
-        $this->_widget_name = $widget_name;
+        echo $this->_widget_name = $widget_name;
     }
 
     public function render()
@@ -82,5 +82,7 @@ class Widget {
          
        return Request::factory($url)->execute();
     }
+    
+    
 
 }

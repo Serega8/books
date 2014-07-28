@@ -6,7 +6,15 @@ class Controller_Widgets_Menupages extends Controller_Widgets {
         
 	public function action_index()
 	{
+            $select = Request::initial()->controller();
+            $menu = array(
+                'Страницы' => array('Pages'),
+                'Новости' => array('News'),
+                'Статьи' => array('Articles'),
+            );
             
+            $this->template->menu = $menu;
+            $this->template->select = $select;
 	}
         
         

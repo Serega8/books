@@ -1,7 +1,8 @@
 
 <h2>Новости магазина</h2>
-<?foreach($news as $title => $content):?>
-<br/>
-<a href="/news"><h3><?=$title?></h3></a>
-<p><?=$content?></p>
+<?foreach($all_news as $news):?>
+<br />
+<h3><?=HTML::anchor('news/get/'. $news['id'], $news['title']);?></h3>
+<p><?=$news['content']?></p>
 <?endforeach?>
+<?=HTML::anchor('news', 'Все новости...');?>

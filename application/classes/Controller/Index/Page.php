@@ -3,7 +3,25 @@
 class Controller_Index_Page extends Controller_Index {
           
 	public function action_index() {
-            $this->action_static();
+            //$this->action_static();
+            
+            $page_alias = $this->request->param('page_alias');
+            
+            $page = ORM::factory('Page')->where('alias', '=', $page_alias)->find();
+            
+            if(!$page->loaded() || $page->status == 0)
+            {
+                $this->redirect();
+            }
+            
+            $content = View::factory('index/page/v_page_index', array(
+                'page' => $page,
+            ));
+            
+            $this->template->title = $page->title;
+            $this->template->page_title = $page->title;
+            $this->template->block_center = array($content);
+            
         }
 
         // Статические страницы
@@ -22,6 +40,7 @@ class Controller_Index_Page extends Controller_Index {
             $content = View::factory('index/page/v_page_contacts');
 
             // Выводим в шаблон
+            $this->template->title = 'Контакты';
             $this->template->page_title = 'Контакты';
             $this->template->block_center = array($content);
         }

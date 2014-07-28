@@ -12,7 +12,7 @@ class Controller_Index extends Controller_Base {
              $news = Widget::load('News');
              $login = Widget::load('Login');
              $cart = Widget::load('Cart');
-             //var_dump($cart);
+            // var_dump($cart->body());
              $topmenu = Widget::load('Topmenu');
             //var_dump($topmenu);
 //            $login = $this->widget_load('Login');
@@ -20,8 +20,8 @@ class Controller_Index extends Controller_Base {
 //            $news = $this->widget_load('News');
             
             $this->template->styles[] = 'media/css/style.css';
- //           $tihs->template->cart = $cart;
-//            $tihs->template->top_menu = $topmenu;
+            $this->template->cart = $cart->body();
+            $this->template->top_menu = $topmenu;
             $this->template->block_left = array($menu, $login);
             $this->template->block_right = array($news);
         }

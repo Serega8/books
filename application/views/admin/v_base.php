@@ -20,6 +20,8 @@
                 <? if(isset($block_center)):?>
                     <td>
                         <h2><?=$page_title?></h2>
+                        <div class="top_menu"><?=$submenu?></div>
+                        <? //var_dump($submenu);?>
                         <? foreach($block_center as $cblock):?>
                             <?=$cblock?>
                         <? endforeach;?>
