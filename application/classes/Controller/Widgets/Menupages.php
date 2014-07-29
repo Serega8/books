@@ -8,9 +8,9 @@ class Controller_Widgets_Menupages extends Controller_Widgets {
 	{
             $select = Request::initial()->controller();
             $menu = array(
-                'Страницы' => array('Pages'),
-                'Новости' => array('News'),
-                'Статьи' => array('Articles'),
+                'Страницы' => array('pages'),
+                'Новости' => array('news'),
+                'Статьи' => array('articles'),
             );
             
             $this->template->menu = $menu;

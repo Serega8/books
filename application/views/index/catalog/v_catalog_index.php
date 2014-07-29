@@ -1,4 +1,9 @@
-<table border="0" width="100%" class="tbl" cellpadding="0" cellspacing="0">
+<br/>
+<?foreach($categories as $cat):?>
+    <?=html::anchor('catalog/cat/'. $cat->id . '', "<h4>$cat->title</h4>")?><br/>
+<?endforeach?>
+    
+<!--<table border="0" width="100%" class="tbl" cellpadding="0" cellspacing="0">
     <thead>
         <tr height="30">
             <th ></th>
@@ -7,11 +12,11 @@
         </tr>
     </thead>
     <tbody>
-        <?foreach($products as $product => $cost):?>
+        <?//foreach($products as $product => $cost):?>
         <tr  valign="top">
             <td width="100"><img src="media/img/book.jpg" width="100"></td>
             <td align="left" >
-                <h3><?=$product?></h3>
+                <h3><?//=$product?></h3>
                 <p>Breath to him perhaps to stone, that moment he could he was meaning 
                     to wipe his trousers and closing the rag and in blank terror expected
                     every minute or even and shrilly shouting, quarrelling and distinctly
@@ -20,10 +25,10 @@
                     The old witch! Lizaveta with tape. Without any delay, he shaking in thought.
             </td>
             <td align="center" class="cost"><br/>
-                <?=$cost?> руб.<br/><br/>
+                <?//=$cost?> руб.<br/><br/>
                 <img src="media/img/buy.gif" width="120">
             </td>
         </tr>
-        <?endforeach?>
+        <?//endforeach?>
     </tbody>
-</table>
+</table>-->

@@ -3,11 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/serega/Документы/kohana/project/application/classes/Controller/Admin/Products.php</file>
-            <file>file:/home/serega/Документы/kohana/project/application/bootstrap.php</file>
-            <file>file:/home/serega/Документы/kohana/project/application/classes/Model/Product.php</file>
+            <file>file:/home/serega/Документы/kohana/project/application/messages/validation.php</file>
+            <file>file:/home/serega/Документы/kohana/project/application/classes/Model/Page.php</file>
+            <file>file:/home/serega/Документы/kohana/project/application/classes/Controller/Widgets/Menupages.php</file>
+            <file>file:/home/serega/Документы/kohana/project/application/classes/Controller/Widgets/Menuproducts.php</file>
             <file>file:/home/serega/Документы/kohana/project/application/classes/Controller/Index/Catalog.php</file>
-            <file>file:/home/serega/Документы/kohana/project/application/views/admin/products/v_products_edit.php</file>
+            <file>file:/home/serega/Документы/kohana/project/application/classes/Controller/Admin/Users.php</file>
+            <file>file:/home/serega/Документы/kohana/project/application/views/admin/settings/v_settings_admin.php</file>
+            <file>file:/home/serega/Документы/kohana/project/application/classes/Controller/Index/Auth.php</file>
+            <file>file:/home/serega/Документы/kohana/project/application/classes/Controller/Admin/Settings.php</file>
+            <file>file:/home/serega/Документы/kohana/project/application/views/admin/products/v_products_admin.php</file>
+            <file>file:/home/serega/Документы/kohana/project/application/classes/Controller/Widgets/Menuadmin.php</file>
+            <file>file:/home/serega/Документы/kohana/project/application/classes/Controller/Widgets/Topproducts.php</file>
+            <file>file:/home/serega/Документы/kohana/project/application/views/index/catalog/v_catalog_view.php</file>
+            <file>file:/home/serega/Документы/kohana/project/application/classes/Controller/Widgets/Topmenu.php</file>
+            <file>file:/home/serega/Документы/kohana/project/application/views/admin/news/v_news_admin.php</file>
         </group>
     </open-files>
 </project-private>

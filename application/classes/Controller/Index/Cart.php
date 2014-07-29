@@ -6,6 +6,7 @@ class Controller_Index_Cart extends Controller_Index {
             
             $content = View::factory('index/cart/v_cart_index');
             
+            $this->template->title = 'Ваша корзина';
             $this->template->page_title = 'Ваша корзина';
             $this->template->block_center = array($content);
             $this->template->block_left = NULL;

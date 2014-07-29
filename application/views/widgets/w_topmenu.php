@@ -1,3 +1,7 @@
-<b>
-    <a href="/page">Главная</a><a href="/page">Каталог</a><a href="/page">Способы оплаты</a><a href="/page">Доставка</a><a href="/page/contacts">Контакты</a>
-</b>
+<?foreach ($menu as $name => $menu):?>
+<?if(in_array($select, $menu)):?>
+<?=Html::anchor('page/'. $menu[0], $name, array('class' => 'select'))?>
+<?else:?>
+<?=Html::anchor('page/'. $menu[0], $name)?>
+<?endif?>
+<?endforeach?>

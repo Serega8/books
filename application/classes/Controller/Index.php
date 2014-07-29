@@ -20,7 +20,7 @@ class Controller_Index extends Controller_Base {
 //            $news = $this->widget_load('News');
             
             $this->template->styles[] = 'media/css/style.css';
-            $this->template->cart = $cart->body();
+            $this->template->cart = $cart;
             $this->template->top_menu = $topmenu;
             $this->template->block_left = array($menu, $login);
             $this->template->block_right = array($news);

@@ -9,11 +9,12 @@ class Controller_Index_News extends Controller_Index {
            
 	public function action_index()
 	{
-            $all_news = Model::factory('News')->get_news();
+            $all_news = Model::factory('New')->order_by('id', 'DESC')->find_all();
             $content = View::factory('index/news/v_news_index', array(
                 'all_news' => $all_news,
             ));
-            
+             
+            $this->template->title = 'Новости';
             $this->template->page_title = 'Новости магазина';
             $this->template->block_center = array($content);
 	}
@@ -21,11 +22,19 @@ class Controller_Index_News extends Controller_Index {
         public function action_get()
         {
             $id = (int) $this->request->param('id');
-            $news = Model::factory('News')->get_one_news($id);
-            $content = View::factory('index/news/v_news_index', array(
+            $news = ORM::factory('new', $id);
+            
+            if(!$news->loaded()){
+                $this->redirect('admin/news');
+            }
+            
+            $content = View::factory('index/news/v_news_get', array(
                 'news' => $news,
             ));
-            $this->template->page_title = HTML::anchor('news')."&rarr;".$news['title'];
+            // Выводим в шаблон
+            $this->template->title = $news->title;
+            $this->template->page_title = HTML::anchor('news', 'Новости') . " &rarr; ".  $news->title;
+            //$this->template->page_title = HTML::anchor('news')."&rarr;".$news['title'];
             $this->template->block_center = array($content);
         }
 }

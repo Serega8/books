@@ -6,7 +6,9 @@ class Controller_Widgets_News extends Controller_Widgets {
         
 	public function action_index()
 	{
-            $all_news = Model::factory('New')->get_news(3); ///limit = 3
+            // Получаем список категорий
+            $all_news = ORM::factory('New')->order_by('id', 'DESC')->limit(3)->find_all();
+//            $all_news = ORM::factory('New');
             $this->template->all_news = $all_news;
 	}
         

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title><?=$site_name?> | <?=$page_title?></title>
+        <title><?=$site_name?> | <?=$title?></title>
          <meta content="text/html; charset=utf-8">
          <? foreach($styles as $file_style):?>
             <?=HTML::style($file_style)?>

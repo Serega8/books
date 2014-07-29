@@ -7,12 +7,14 @@
     </thead>
 <? foreach ($all_news as $news):?>
 <tr>
-<td align="center" width="100"><?=$news['date']?></td>
-<td ><?=HTML::anchor('admin/news/edit/'. $news['id'], $news['title'])?></td>
+<td align="center" width="100"><?=$news->date?></td>
+<td ><?=HTML::anchor('admin/news/edit/'. $news->id, $news->title)?></td>
 <td width="100" align="center">
-<?=HTML::anchor('admin/news/edit/'. $news['id'], HTML::image('media/img/edit.png'))?>
+<?=HTML::anchor('news/get/'. $news->id, HTML::image('media/img/see.png'), array('target' => '_blank'))?>
 
-<?=HTML::anchor('admin/news/delete/'. $news['id'], HTML::image('media/img/delete.png'))?>
+<?=HTML::anchor('admin/news/edit/'. $news->id, HTML::image('media/img/edit.png'))?>
+
+<?=HTML::anchor('admin/news/delete/'. $news->id, HTML::image('media/img/delete.png'))?>
 
 </td>
 </tr>

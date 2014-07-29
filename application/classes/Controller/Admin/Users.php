@@ -2,17 +2,21 @@
 
 class Controller_Admin_Users extends Controller_Admin {
            
-	public function action_index()
-	{
-            
-            $submenu = Widget::load('Menuusers');
-            $content = View::factory('admin/users/v_users_admin', array(
-                'submenu' => $submenu,
-            ));
-            
-            $this->template->page_title = 'Пользователи';
-            $this->template->block_center = array($content);
-	}
+	public function before() {
+        parent::before();
+
+        // Вывод в шаблон
+        $this->template->submenu = Widget::load('Menuusers');
+    }
+
+    public function action_index() {
+
+        $content = View::factory('admin/users/v_users_admin');
+
+        // Вывод в шаблон
+        $this->template->page_title = 'Пользователи';
+        $this->template->block_center = array($content);
+    }
         
         
 }

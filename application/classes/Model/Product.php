@@ -21,19 +21,35 @@ class Model_Product extends ORM {
         ),
     );
     
-    public function rules() 
+//    public function rules() 
+//    {
+//        return array(
+//            //для того, чтобы применить правило ко всем полям
+//            //вместо ключа(title) нужно написать TRUE
+//            'title' => array(
+//                array('not_empty'),
+//                array('min_length', array(':value', 3)),
+//               // array('Some_Class::some_method', array('param1', 'param2')),
+//            ),
+////            'uniq' => array(
+////                array(array($this, 'is_unique'), array(':value', ':validation')),
+////            ),
+//        );
+//    }
+    
+     public function rules()
     {
         return array(
-            //для того, чтобы применить правило ко всем полям
-            //вместо ключа(title) нужно написать TRUE
             'title' => array(
                 array('not_empty'),
-                array('min_length', array(':value', 3)),
-               // array('Some_Class::some_method', array('param1', 'param2')),
             ),
-//            'uniq' => array(
-//                array(array($this, 'is_unique'), array(':value', ':validation')),
-//            ),
+            'description' => array(
+                array('not_empty'),
+            ),
+            'cost' => array(
+                array('not_empty'),
+                array('numeric'),
+            ),
         );
     }
     
@@ -46,7 +62,7 @@ class Model_Product extends ORM {
     {
         return array(
             'title'       => 'Наименование',
-            'cat_id'      => 'Категория',
+            //'cat_id'      => 'Категория',
             'description' => 'Описание',
             'cost'        => 'Цена',
         );
@@ -58,6 +74,12 @@ class Model_Product extends ORM {
             //для всех полей - TRUE
             TRUE => array(
                 array('trim'),
+            ),
+            'title' => array(
+                array('strip_tags'),
+            ),
+            'cost' => array(
+                array('strip_tags'),
             ),
         );
     }

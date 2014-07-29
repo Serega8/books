@@ -14,6 +14,7 @@ class Controller_Index_Main extends Controller_Index {
 //        print_r($all_products);die;
         
         // Вывод в шаблон
+        $this->template->title = 'Главная';
         $this->template->page_title = 'О магазине';
         $this->template->block_center = array($block_center, $search , $topproducts);
         

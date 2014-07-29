@@ -9,12 +9,12 @@ class Controller_Widgets_Menuadmin extends Controller_Widgets {
             $select = Request::initial()->controller();
             
             $menu = array(
-                'Главная' => array('Main'),
-                'Заказы' => array('Orders'),
-                'Страницы' => array('Pages', 'News', 'Articles'),
-                'Товары' => array('Products'),
-                'Пользователи' => array('Users'),
-                'Настройки' => array('Settings'),
+                'Главная' => array('main'),
+                'Заказы' => array('orders'),
+                'Страницы' => array('pages', 'news', 'articles'),
+                'Товары' => array('products'),
+                'Пользователи' => array('users'),
+                'Настройки' => array('settings'),
             );
             
             $this->template->menu = $menu;

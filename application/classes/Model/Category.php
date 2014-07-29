@@ -4,7 +4,7 @@ class Model_Category extends ORM {
 
     protected $_has_many = array(
         'products' => array(
-            'Model' => 'Product',
+            'model' => 'Product',
             'through' => 'products_categories',
         ),
     );
